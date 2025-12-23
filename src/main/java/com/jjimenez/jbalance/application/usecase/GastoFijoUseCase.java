@@ -1,4 +1,4 @@
-package com.jjimenez.jbalance.domain.usecase;
+package com.jjimenez.jbalance.application.usecase;
 
 import com.jjimenez.jbalance.domain.model.GastoFijo;
 import com.jjimenez.jbalance.domain.model.gateways.GastoFijoGateway;
@@ -13,7 +13,6 @@ public class GastoFijoUseCase {
     public Mono<GastoFijo> obtenerGastoFijoPorId(Long id) {
         return gastoFijoGateway.buscarPorId(id);
     }
-
     public Mono<GastoFijo> guardarGastoFijo(GastoFijo gastoFijo) {
         return gastoFijoGateway.guardarGastoFijo(gastoFijo);
     }

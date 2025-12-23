@@ -1,4 +1,4 @@
-package com.jjimenez.jbalance.domain.usecase;
+package com.jjimenez.jbalance.application.usecase;
 
 import com.jjimenez.jbalance.domain.model.Movimiento;
 import com.jjimenez.jbalance.domain.model.gateways.MovimientoGateway;
@@ -13,7 +13,6 @@ public class MovimientoUseCase {
     public Mono<Movimiento> obtenerMovimientoPorId(Long id) {
         return movimientoGateway.buscarPorId(id);
     }
-
     public Mono<Movimiento> guardarMovimiento(Movimiento movimiento) {
         return movimientoGateway.guardarMovimiento(movimiento);
     }
