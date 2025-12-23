@@ -1,4 +1,4 @@
-package com.jjimenez.jbalance.domain.usecase;
+package com.jjimenez.jbalance.application.usecase;
 
 import com.jjimenez.jbalance.domain.model.Salario;
 import com.jjimenez.jbalance.domain.model.gateways.SalarioGateway;
@@ -13,7 +13,6 @@ public class SalarioUseCase {
     public Mono<Salario> guardarSalario(Salario salario) {
         return salarioGateway.guardarSalario(salario);
     }
-
     public Mono<Salario> obtenerSalarioPorId(Long id) {
         return salarioGateway.buscarPorId(id);
     }
