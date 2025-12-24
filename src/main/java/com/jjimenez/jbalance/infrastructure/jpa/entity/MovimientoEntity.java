@@ -1,15 +1,30 @@
-package com.jjimenez.jbalance.domain.model;
+package com.jjimenez.jbalance.infrastructure.jpa.entity;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDate;
 
-public class Movimiento {
+@Table("movimientos")
+public class MovimientoEntity {
+    @Id
     private Long id;
-    private Long idGastoFijo;
-    private String descripcion;
-    private Double valor;
-    private LocalDate fecha;
-    private String periodo;
 
+    @Column("id_gasto_fijo")
+    private Long idGastoFijo;
+
+    @Column("descripcion")
+    private String descripcion;
+
+    @Column("valor")
+    private Double valor;
+
+    @Column("fecha")
+    private LocalDate fecha;
+
+    @Column("periodo")
+    private String periodo;
 
     public Long getId() {
         return id;

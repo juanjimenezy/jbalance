@@ -8,9 +8,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public class SalarioJpaAdapter implements SalarioGateway {
-
     private final SalarioRepository salarioRepository;
-
     public SalarioJpaAdapter(SalarioRepository salarioRepository) {
         this.salarioRepository = salarioRepository;
     }

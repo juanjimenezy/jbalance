@@ -8,9 +8,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public class GastoFijoJpaAdapter implements GastoFijoGateway {
-
     private final GastoFijoRepository gastoFijoRepository;
-
     public GastoFijoJpaAdapter(GastoFijoRepository gastoFijoRepository) {
         this.gastoFijoRepository = gastoFijoRepository;
     }
