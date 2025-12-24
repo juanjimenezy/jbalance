@@ -1,8 +1,12 @@
 package com.jjimenez.jbalance.infrastructure.configuration;
 
+import com.jjimenez.jbalance.application.usecase.GastoFijoUseCase;
 import com.jjimenez.jbalance.application.usecase.SalarioUseCase;
+import com.jjimenez.jbalance.domain.model.gateways.GastoFijoGateway;
 import com.jjimenez.jbalance.domain.model.gateways.SalarioGateway;
+import com.jjimenez.jbalance.infrastructure.jpa.adapter.GastoFijoJpaAdapter;
 import com.jjimenez.jbalance.infrastructure.jpa.adapter.SalarioJpaAdapter;
+import com.jjimenez.jbalance.infrastructure.jpa.repository.GastoFijoRepository;
 import com.jjimenez.jbalance.infrastructure.jpa.repository.SalarioRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,5 +23,16 @@ public class BeanConfiguration {
     public SalarioUseCase salarioUseCase(SalarioGateway salarioGateway) {
         return new SalarioUseCase(salarioGateway);
     }
+
+    @Bean
+    public GastoFijoGateway gastoFijoGateway(GastoFijoRepository gastoFijoRepository) {
+        return new GastoFijoJpaAdapter(gastoFijoRepository);
+    }
+
+    @Bean
+    public GastoFijoUseCase gastoFijoUseCase(GastoFijoGateway gastoFijoGateway) {
+        return new GastoFijoUseCase(gastoFijoGateway);
+    }
+
 
 }
