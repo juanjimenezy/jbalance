@@ -10,4 +10,7 @@ import reactor.core.publisher.Flux;
 public interface GastoFijoRepository extends ReactiveCrudRepository<GastoFijoEntity, Long> {
     @Query("SELECT * FROM GASTO_FIJO WHERE estado = 'A'")
     Flux<GastoFijoEntity> findActivos();
+
+    @Query("SELECT gf.* FROM GASTO_FIJO gf LEFT JOIN MOVIMIENTOS m ON m.id_gasto_fijo = gf.id and m.periodo = :periodo WHERE m.id IS NULL;" )
+    Flux<GastoFijoEntity> findPorPagarByPeriodo(String periodo);
 }

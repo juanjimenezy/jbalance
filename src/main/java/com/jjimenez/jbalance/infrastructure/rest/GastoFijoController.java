@@ -24,6 +24,11 @@ public class GastoFijoController {
     public Mono<GastoFijo> guardarGastoFijo(@RequestBody GastoFijo gastoFijo) {
         return gastoFijoUseCase.guardarGastoFijo(gastoFijo);
     }
+
+    @GetMapping("/por-pagar/{periodo}")
+    public Flux<GastoFijo> obtenerGastosFijosPorPagarSegunPeriodo(@PathVariable("periodo") String periodo) {
+        return gastoFijoUseCase.obtenerGastosFijosPorPagarSegunPeriodo(periodo);
+    }
     
     @GetMapping("/all")
     public Flux<GastoFijo> obtenerTodosLosGastosFijos() {

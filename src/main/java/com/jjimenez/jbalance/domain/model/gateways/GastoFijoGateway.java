@@ -8,4 +8,5 @@ public interface GastoFijoGateway {
     Mono<GastoFijo> buscarPorId(Long id);
     Mono<GastoFijo> guardarGastoFijo(GastoFijo gastoFijo);
     Flux<GastoFijo> buscarTodosLosGastosFijos();
+    Flux<GastoFijo> buscarGastosFijosPorPagarSegunPeriodo(String periodo);
 }

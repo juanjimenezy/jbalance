@@ -44,8 +44,8 @@ public class BeanConfiguration {
     }
 
     @Bean
-    public MovimientoUseCase movimientoUseCase(MovimientoGateway movimientoGateway) {
-        return new MovimientoUseCase(movimientoGateway);
+    public MovimientoUseCase movimientoUseCase(MovimientoGateway movimientoGateway,GastoFijoGateway gastoFijoGateway) {
+        return new MovimientoUseCase(movimientoGateway, gastoFijoGateway);
     }
 
 }

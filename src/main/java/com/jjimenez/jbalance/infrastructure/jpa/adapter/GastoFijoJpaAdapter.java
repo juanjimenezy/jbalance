@@ -40,6 +40,12 @@ public class GastoFijoJpaAdapter implements GastoFijoGateway {
         return gastoFijoRepository.findActivos().map(this::entityToModel);
     }
 
+    @Override
+    public Flux<GastoFijo> buscarGastosFijosPorPagarSegunPeriodo(String periodo) {
+        return gastoFijoRepository.findPorPagarByPeriodo(periodo)
+                .map(this::entityToModel);
+    }
+
     private GastoFijo entityToModel(GastoFijoEntity gastoFijoEntity) {
         GastoFijo gastoFijo = new GastoFijo();
         gastoFijo.setId(gastoFijoEntity.getId());

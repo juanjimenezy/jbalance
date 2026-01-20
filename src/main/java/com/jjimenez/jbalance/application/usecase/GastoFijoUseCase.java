@@ -24,4 +24,8 @@ public class GastoFijoUseCase {
         return gastoFijoGateway.buscarTodosLosGastosFijos()
                 .filter(gastoFijo -> gastoFijo.getEstado().equals("A"));
     }
+
+    public Flux<GastoFijo> obtenerGastosFijosPorPagarSegunPeriodo(String periodo) {
+        return gastoFijoGateway.buscarGastosFijosPorPagarSegunPeriodo(periodo);
+    }
 }

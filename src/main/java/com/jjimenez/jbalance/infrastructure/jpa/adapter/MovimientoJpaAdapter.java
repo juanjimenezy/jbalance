@@ -44,6 +44,7 @@ public class MovimientoJpaAdapter implements MovimientoGateway {
         movimientoEntity.setIdGastoFijo(movimiento.getIdGastoFijo());
         movimientoEntity.setValor(movimiento.getValor());
         movimientoEntity.setFecha(movimiento.getFecha());
+        movimientoEntity.setPeriodo(movimiento.getPeriodo());
         movimientoEntity.setDescripcion(movimiento.getDescripcion());
         return movimientoEntity;
     }
